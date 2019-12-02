@@ -1,6 +1,14 @@
+@font-face {
+  font-family: truelies;
+  src: url('../fonts/truelies.ttf');
+}
+
 :root {
   --white: #fff;
   --yellow: #ffe500;
+  --green: #48ca61;
+  --blue: #29baff;
+  --purple: purple;
   --black: #000;
   --red: #f00;
 }
@@ -11,10 +19,11 @@
 
 a {
   color: inherit;
+  text-decoration: inherit;
 }
 
 body {
-  background-image: url('../images/background.png');
+  background-image: url('../images/background.jpg');
   background-color: var(--black);
   background-size: cover;
   margin: 0;
@@ -24,6 +33,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header,
+main,
+footer {
+  padding: 10px;
+  position: relative;
+}
+
 header {
   align-items: center;
   display: flex;
@@ -31,7 +47,6 @@ header {
   flex-flow: column nowrap;
   height: 100px;
   justify-content: center;
-  padding: 10px;
 }
 
 main {
@@ -39,17 +54,45 @@ main {
   flex: 1 0 auto;
   align-items: center;
   justify-content: center;
-  padding: 10px;
 }
 
 footer {
   color: var(--white);
-  padding: 10px;
   flex: 0 1 auto;
 }
 
+.playground {
+  font-family: 'truelies';
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  color: var(--yellow);
+
+  transform: rotate(-5deg) scale(0.7) translate(35%, 75%);
+  text-shadow: 0 0 2px var(--purple), 0 0 4px var(--purple), 0 0 8px var(--purple), 0 0 16px var(--purple),
+    0 0 32px var(--purple), 2px 2px var(--purple);
+}
+
 .sith {
-  text-shadow: 0 0 2px var(--red), 0 0 4px var(--red), 0 0 8px var(--red), 0 0 16px var(--red), 0 0 32px var(--red);
+  color: var(--white);
+  text-shadow: 0 0 2px var(--red), 0 0 4px var(--red), 0 0 8px var(--red), 0 0 16px var(--red), 0 0 32px var(--red),
+    2px 2px var(--black);
+}
+
+.jedi {
+  color: var(--white);
+  text-shadow: 0 0 2px var(--blue), 0 0 4px var(--blue), 0 0 8px var(--blue), 0 0 16px var(--blue), 0 0 32px var(--blue),
+    2px 2px var(--black);
+}
+
+.yoda {
+  color: var(--white);
+  text-shadow: 0 0 2px var(--green), 0 0 4px var(--green), 0 0 8px var(--green), 0 0 16px var(--green),
+    0 0 32px var(--green), 2px 2px var(--green);
+}
+
+.shadow {
+  filter: drop-shadow(2px 2px 8px var(--black));
 }
 
 #svg-defs {
@@ -60,4 +103,32 @@ footer {
 
 symbol svg {
   fill: var(--white);
+}
+
+ul.movies {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.card {
+  background: lime;
+  border-radius: 16px;
+  height: 200px;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 140px;
+}
+
+.card img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
 }
