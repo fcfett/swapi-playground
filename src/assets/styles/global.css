@@ -1,0 +1,63 @@
+:root {
+  --white: #fff;
+  --yellow: #ffe500;
+  --black: #000;
+  --red: #f00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  background-image: url('../images/background.png');
+  background-color: var(--black);
+  background-size: cover;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: column nowrap;
+  height: 100px;
+  justify-content: center;
+  padding: 10px;
+}
+
+main {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+footer {
+  color: var(--white);
+  padding: 10px;
+  flex: 0 1 auto;
+}
+
+.sith {
+  text-shadow: 0 0 2px var(--red), 0 0 4px var(--red), 0 0 8px var(--red), 0 0 16px var(--red), 0 0 32px var(--red);
+}
+
+#svg-defs {
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+symbol svg {
+  fill: var(--white);
+}
