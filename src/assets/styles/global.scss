@@ -59,18 +59,36 @@ main {
 footer {
   color: var(--white);
   flex: 0 1 auto;
+
+  .jedi {
+    @extend .brushed;
+    transform: translateY(-2px) scale(1.1);
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    padding: 0 4px;
+  }
+
+  .sith {
+    font-family: monospace;
+    font-size: 1.2em;
+  }
 }
 
 .playground {
-  font-family: 'brushstrike';
+  @extend .brushed;
   position: absolute;
   bottom: 0;
   margin: 0;
   color: var(--yellow);
 
-  transform: rotate(-3deg) scale(0.7) translate(35%, 50%);
+  transform: rotate(-3deg) scale(0.7) translate(35%, 45%);
   text-shadow: 0 0 2px var(--purple), 0 0 4px var(--purple), 0 0 8px var(--purple), 0 0 16px var(--purple),
     0 0 32px var(--purple), 2px 2px var(--purple);
+}
+
+.brushed {
+  font-family: 'brushstrike';
 }
 
 .sith {
@@ -123,8 +141,14 @@ ul.movies {
   width: 140px;
   transition-property: box-shadow;
 
+  .content {
+    transform: scale(0);
+    opacity: 0;
+  }
+
   &,
   img,
+  .content,
   &:before,
   &:after {
     border-radius: 16px;
@@ -132,14 +156,11 @@ ul.movies {
   }
 
   img {
-    height: 100%;
-    left: 0;
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    width: 100%;
   }
 
+  img,
+  .content,
   &:before,
   &:after {
     content: '';
@@ -163,7 +184,7 @@ ul.movies {
     transition-property: border, box-shadow;
   }
 
-  &:hover {
+  &:not(.active):hover {
     box-shadow: 0 25px 30px -10px #000;
     &:before {
       transform: scale(1.1, 1.05);
@@ -171,6 +192,32 @@ ul.movies {
     }
     &:after {
       box-shadow: 0 0 1px 2px var(--white);
+    }
+  }
+
+  &.active .content {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    z-index: 9;
+    background: var(--black);
+    border-radius: 0;
+    opacity: 1;
+    transform: scale(1);
+    color: var(--yellow);
+
+    img,
+    &:after,
+    &:before {
+      transform: scale(0);
+      opacity: 0;
+      //display: none;
     }
   }
 }
@@ -185,4 +232,8 @@ ul.movies {
   75% {
     opacity: 1;
   }
+}
+
+.pulse {
+  animation: pulse 3s infinite;
 }
