@@ -1,6 +1,6 @@
 @font-face {
-  font-family: truelies;
-  src: url('../fonts/truelies.ttf');
+  font-family: brushstrike;
+  src: url('../fonts/brushstrike.ttf');
 }
 
 :root {
@@ -62,13 +62,13 @@ footer {
 }
 
 .playground {
-  font-family: 'truelies';
+  font-family: 'brushstrike';
   position: absolute;
   bottom: 0;
   margin: 0;
   color: var(--yellow);
 
-  transform: rotate(-5deg) scale(0.7) translate(35%, 75%);
+  transform: rotate(-3deg) scale(0.7) translate(35%, 50%);
   text-shadow: 0 0 2px var(--purple), 0 0 4px var(--purple), 0 0 8px var(--purple), 0 0 16px var(--purple),
     0 0 32px var(--purple), 2px 2px var(--purple);
 }
@@ -115,20 +115,74 @@ ul.movies {
 }
 
 .card {
-  background: lime;
   border-radius: 16px;
   height: 200px;
   margin: 10px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   width: 140px;
+  transition-property: box-shadow;
+
+  &,
+  img,
+  &:before,
+  &:after {
+    border-radius: 16px;
+    transition: 0.35s ease-out;
+  }
+
+  img {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &:before {
+    transform: scale(0.6);
+    filter: blur(16px);
+    transition-property: filter, transform, opacity;
+    background-image: linear-gradient(135deg, var(--green) 15%, var(--blue), var(--purple), var(--red) 85%);
+    z-index: -1;
+  }
+
+  &:after {
+    box-sizing: border-box;
+    transition-property: border, box-shadow;
+  }
+
+  &:hover {
+    box-shadow: 0 25px 30px -10px #000;
+    &:before {
+      transform: scale(1.1, 1.05);
+      animation: pulse 3s infinite;
+    }
+    &:after {
+      box-shadow: 0 0 1px 2px var(--white);
+    }
+  }
 }
 
-.card img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  object-fit: cover;
+@keyframes pulse {
+  0%,
+  50%,
+  100% {
+    opacity: 0.6;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
 }

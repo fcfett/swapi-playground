@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './style.scss';
 
 import SvgDefs from '../../components/molecules/SvgDefs';
 import Header from '../../components/organisms/Header';
