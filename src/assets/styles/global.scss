@@ -141,7 +141,6 @@ ul.movies {
 
 .card {
   border-radius: 16px;
-  cursor: pointer;
   height: 200px;
   margin: 10px;
   overflow: visible;
@@ -179,6 +178,7 @@ ul.movies {
     margin: 0;
     position: relative;
     z-index: 1;
+    cursor: pointer;
   }
 
   .content {
@@ -224,7 +224,7 @@ ul.movies {
     z-index: 9;
     background: var(--black);
     border-radius: 0;
-    opacity: 1;
+    opacity: 0.9;
     transform: scale(1);
     color: var(--yellow);
     overflow: hidden;
@@ -238,15 +238,16 @@ ul.movies {
 
 .btn {
   &,
-  &-close {
+  &-close,
+  &-replay {
     border: none;
     background: none;
     color: var(--white);
+    cursor: pointer;
   }
 
   &-close {
     position: absolute;
-    cursor: pointer;
     top: 0;
     right: 0;
     margin: 20px 10px;

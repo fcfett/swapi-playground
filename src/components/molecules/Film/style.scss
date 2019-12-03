@@ -6,25 +6,85 @@
   .intro,
   .info {
     position: relative;
-    padding: 10px;
     display: flex;
     flex-flow: column nowrap;
     max-height: 100%;
+    flex: 1 0 50%;
   }
 
   .intro {
-    flex: 1 0 40%;
-    background-color: grey;
-    font-size: 4rem;
-    overflow: scroll;
-    transform: perspective(300px) rotateX(20deg) translateY(-20px);
     z-index: 1;
+
+    .crawler {
+      overflow: hidden;
+      padding: 10px;
+      position: relative;
+      transform: perspective(300px) rotateX(20deg) translateY(-20px);
+    }
+
+    .text {
+      margin: 80% 15%;
+      //text-align: justify;
+      font-size: 3rem;
+      z-index: 1;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      height: 40px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      display: block;
+      right: 0;
+      z-index: 2;
+    }
+
+    &:before {
+      top: 0;
+      background-image: linear-gradient(to bottom, var(--black), transparent);
+      transform: perspective(300px) rotateX(20deg) translateY(53px);
+    }
+    &:after {
+      bottom: 0;
+      background-image: linear-gradient(to top, var(--black), transparent);
+      transform: perspective(300px) rotateX(20deg) translateY(40px);
+    }
+
+    .btn-replay {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      opacity: 0;
+      transform: translate(-60%, -60%) scale(0);
+      transition: 0.25s ease-out;
+      transition-property: transform, opacity;
+      &.visible {
+        opacity: 1;
+        transform: translate(-60%, -60%) scale(1);
+      }
+    }
   }
 
   .info {
-    flex: 1 0 60%;
     justify-content: center;
-    background-color: darkgrey;
+    padding: 10px;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
 
     ul {
       display: flex;
@@ -33,10 +93,10 @@
       list-style: none;
       justify-content: center;
       align-items: center;
-
       padding: 0;
+
       li {
-        margin: 20px;
+        margin: 2.5rem 20px 0;
         &:first-of-type {
           margin-left: 0;
         }
