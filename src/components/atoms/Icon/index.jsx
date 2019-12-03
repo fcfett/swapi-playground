@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.scss';
 
 const getPropsValues = (props) => {
   const name = props.name ? `#svg-icon-${props.name}` : null;
@@ -12,7 +13,7 @@ export default (props) => {
   const { className, name, height, width } = getPropsValues(props);
   return (
     name && (
-      <svg className={className} height={height} width={width}>
+      <svg className={`icon ${props.name} ${className || ''}`} height={height} width={width}>
         <use xlinkHref={name}></use>
       </svg>
     )

@@ -43,10 +43,11 @@ footer {
 header {
   align-items: center;
   display: flex;
-  flex: 0 1 auto;
+  flex: 0 1 100px;
   flex-flow: column nowrap;
-  height: 100px;
+  min-height: 100px;
   justify-content: center;
+  margin: 0 0 10px;
 }
 
 main {
@@ -119,6 +120,12 @@ footer {
   width: 0;
 }
 
+svg {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 symbol svg {
   fill: var(--white);
 }
@@ -134,17 +141,13 @@ ul.movies {
 
 .card {
   border-radius: 16px;
+  cursor: pointer;
   height: 200px;
   margin: 10px;
   overflow: visible;
   position: relative;
   width: 140px;
   transition-property: box-shadow;
-
-  .content {
-    transform: scale(0);
-    opacity: 0;
-  }
 
   &,
   img,
@@ -155,10 +158,7 @@ ul.movies {
     transition: 0.35s ease-out;
   }
 
-  img {
-    object-fit: cover;
-  }
-
+  figure,
   img,
   .content,
   &:before,
@@ -169,6 +169,25 @@ ul.movies {
     position: absolute;
     top: 0;
     width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  figure {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .content {
+    opacity: 0;
+    position: fixed;
+    transform: scale(0);
+    * {
+      visibility: hidden;
+    }
   }
 
   &:before {
@@ -197,9 +216,6 @@ ul.movies {
 
   &.active .content {
     position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     right: 0;
     bottom: 0;
     width: auto;
@@ -211,14 +227,29 @@ ul.movies {
     opacity: 1;
     transform: scale(1);
     color: var(--yellow);
+    overflow: hidden;
+    padding: 110px 10px 40px;
 
-    img,
-    &:after,
-    &:before {
-      transform: scale(0);
-      opacity: 0;
-      //display: none;
+    * {
+      visibility: visible;
     }
+  }
+}
+
+.btn {
+  &,
+  &-close {
+    border: none;
+    background: none;
+    color: var(--white);
+  }
+
+  &-close {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    margin: 20px 10px;
   }
 }
 

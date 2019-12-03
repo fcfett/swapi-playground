@@ -1,0 +1,54 @@
+.content {
+  display: flex;
+  flex-flow: row wrap;
+  overflow: hidden;
+
+  .intro,
+  .info {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    max-height: 100%;
+  }
+
+  .intro {
+    flex: 1 0 40%;
+    background-color: grey;
+    font-size: 4rem;
+    overflow: scroll;
+    transform: perspective(300px) rotateX(20deg) translateY(-20px);
+    z-index: 1;
+  }
+
+  .info {
+    flex: 1 0 60%;
+    justify-content: center;
+    background-color: darkgrey;
+
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      text-align: center;
+      list-style: none;
+      justify-content: center;
+      align-items: center;
+
+      padding: 0;
+      li {
+        margin: 20px;
+        &:first-of-type {
+          margin-left: 0;
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        h2 {
+          margin: 0;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}

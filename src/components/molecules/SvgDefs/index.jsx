@@ -6,6 +6,8 @@ import { ReactComponent as Planets } from '../../../assets/icons/planets.svg';
 import { ReactComponent as Species } from '../../../assets/icons/species.svg';
 import { ReactComponent as Starships } from '../../../assets/icons/starships.svg';
 import { ReactComponent as Vehicles } from '../../../assets/icons/vehicles.svg';
+import { ReactComponent as Plus } from '../../../assets/icons/plus.svg';
+import { ReactComponent as AngleDown } from '../../../assets/icons/angle-down.svg';
 
 export default (props) => (
   <svg id="svg-defs">
@@ -35,6 +37,18 @@ export default (props) => (
 
     <symbol id="svg-icon-vehicles">
       <Vehicles />
+    </symbol>
+
+    <symbol id="svg-icon-close">
+      <Plus />
+    </symbol>
+
+    <symbol id="svg-icon-next">
+      <AngleDown />
+    </symbol>
+
+    <symbol id="svg-icon-prev">
+      <AngleDown />
     </symbol>
   </svg>
 );

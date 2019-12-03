@@ -1,0 +1,13 @@
+.icon {
+  &.close {
+    transform: rotate(45deg);
+  }
+
+  &.prev {
+    transform: rotate(90deg);
+  }
+
+  &.next {
+    transform: rotate(-90deg);
+  }
+}

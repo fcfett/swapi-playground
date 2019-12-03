@@ -11,7 +11,13 @@ const images = {
   '2017-12-14': require('../../../assets/images/2017-12-14.jpeg')
 };
 
-export default ({ date, alt }) => {
+export default ({ date, alt, ...rest }) => {
   const image = images[date] || false;
-  return image && <img src={image} alt={alt} />;
+  return (
+    image && (
+      <figure {...rest}>
+        <img src={image} alt={alt} />
+      </figure>
+    )
+  );
 };
