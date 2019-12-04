@@ -4,7 +4,7 @@ import './style.scss';
 import Thumb from '../Thumb';
 import Icon from '../../atoms/Icon';
 
-export default ({ date, alt }) => {
+export default (props) => {
   const [isActive, setActive] = useState(false);
   const [scrolling, setScrolling] = useState();
 
@@ -26,9 +26,9 @@ export default ({ date, alt }) => {
       const interval = setInterval(() => {
         introEl.scrollTop += 2;
         const { offsetHeight, scrollTop, scrollHeight } = introEl;
-        console.warn(`scrolling ${scrollTop} of ${scrollHeight - offsetHeight}`);
+        //console.warn(`scrolling ${scrollTop} of ${scrollHeight - offsetHeight}`);
         if (offsetHeight + scrollTop === scrollHeight) {
-          console.warn('clearInterval');
+          //console.warn('clearInterval');
           clearInterval(interval);
           setScrolling(null);
         }
@@ -37,54 +37,39 @@ export default ({ date, alt }) => {
     }
   };
 
+  const { title, episode_id, opening_crawl, director, producer, release_date, ...rest } = props;
+  const { characters, planets, starships, vehicles, species } = rest;
+
+  const renderQuantifiers = () =>
+    Object.entries({ characters, planets, starships, vehicles, species }).map(([key, arrValues]) => (
+      <li key={`${release_date}-${key}`}>
+        <h2>{arrValues.length}</h2>
+        <span>{key}</span>
+      </li>
+    ));
+
   return (
     <li className={`card ${isActive ? 'active' : ''}`}>
-      <Thumb date={date} alt={alt} onClick={() => toggleActive(true)} />
+      <Thumb date={release_date} alt={title} onClick={() => toggleActive(true)} />
       <section className="content">
         <button className="btn-close" onClick={() => toggleActive(false)}>
           <Icon name="close" height={32} width={32} />
         </button>
         <article className="intro">
           <section className="crawler" ref={introRef}>
-            <p className="text">{`It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first
-          victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal
-          secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough
-          power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia
-          races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and
-          restore\r\nfreedom to the galaxy....`}</p>
+            <p className="text">{`${opening_crawl}`}</p>
           </section>
           <button className={`btn-replay ${(!scrolling && 'visible') || ''}`} onClick={() => triggerCrawling()}>
             <Icon name="reload" width={60} height={60} />
           </button>
         </article>
         <article className="info">
-          <h2>Episode I</h2>
-          <h1>A New Hope</h1>
-          <p>{date}</p>
-          <p>Directed by George Lucas</p>
-          <p>Produced by Gary Kurtz, Rick McCallum</p>
-          <ul>
-            <li>
-              <h2>3</h2>
-              <span>planets</span>
-            </li>
-            <li>
-              <h2>5</h2>
-              <span>species</span>
-            </li>
-            <li>
-              <h2>18</h2>
-              <span>characters</span>
-            </li>
-            <li>
-              <h2>4</h2>
-              <span>vehicles</span>
-            </li>
-            <li>
-              <h2>8</h2>
-              <span>starships</span>
-            </li>
-          </ul>
+          <h2>Episode {episode_id}</h2>
+          <h1>{title}</h1>
+          <p>{release_date}</p>
+          <p>Directed by {director}</p>
+          <p>Produced by {producer}</p>
+          <ul>{renderQuantifiers()}</ul>
         </article>
       </section>
     </li>
