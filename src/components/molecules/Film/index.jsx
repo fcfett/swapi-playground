@@ -3,6 +3,7 @@ import './style.scss';
 
 import Thumb from '../Thumb';
 import Icon from '../../atoms/Icon';
+import { getRomanNumber } from '../../../utils/helpers';
 
 export default (props) => {
   const [isActive, setActive] = useState(false);
@@ -64,7 +65,7 @@ export default (props) => {
           </button>
         </article>
         <article className="info">
-          <h2>Episode {episode_id}</h2>
+          <h2>Episode {getRomanNumber(episode_id)}</h2>
           <h1>{title}</h1>
           <p>{release_date}</p>
           <p>Directed by {director}</p>

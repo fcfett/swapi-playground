@@ -1,0 +1,19 @@
+.loader {
+  color: cyan;
+  text-align: left;
+  text-shadow: 0 0 2px var(--blue);
+  font-size: 1.3rem;
+  animation: growing 10s ease-out forwards;
+
+  @keyframes growing {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+}
