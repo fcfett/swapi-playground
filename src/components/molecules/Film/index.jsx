@@ -9,10 +9,7 @@ export default (props) => {
   const [isActive, setActive] = useState(false);
   const [scrolling, setScrolling] = useState();
 
-  const toggleActive = (toggle) => {
-    console.warn('toggleActive', toggle);
-    setActive(toggle ? toggle : !isActive);
-  };
+  const toggleActive = (toggle) => setActive(toggle ? toggle : !isActive);
 
   const introRef = useRef();
   useEffect(() => {
@@ -27,9 +24,7 @@ export default (props) => {
       const interval = setInterval(() => {
         introEl.scrollTop += 2;
         const { offsetHeight, scrollTop, scrollHeight } = introEl;
-        //console.warn(`scrolling ${scrollTop} of ${scrollHeight - offsetHeight}`);
         if (offsetHeight + scrollTop === scrollHeight) {
-          //console.warn('clearInterval');
           clearInterval(interval);
           setScrolling(null);
         }
@@ -60,7 +55,7 @@ export default (props) => {
           <section className="crawler" ref={introRef}>
             <p className="text">{`${opening_crawl}`}</p>
           </section>
-          <button className={`btn-replay ${(!scrolling && 'visible') || ''}`} onClick={() => triggerCrawling()}>
+          <button className={`btn-replay ${!scrolling ? 'visible' : ''}`} onClick={() => triggerCrawling()}>
             <Icon name="reload" width={60} height={60} />
           </button>
         </article>

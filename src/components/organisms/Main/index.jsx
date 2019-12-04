@@ -1,16 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 
-import Loader from '../../atoms/Loader';
-import Film from '../../molecules/Film';
+import FilmList from '../../molecules/FilmList';
 import { FilmsContext } from '../../../store/Films';
 import { getFilms } from '../../../services/swapi';
 import { sortByKey } from '../../../utils/helpers';
 
 export default () => {
   const { state, setState } = useContext(FilmsContext);
-  const { data, loaded /*,sortBy*/ } = state;
+  const { data } = state;
 
-  const fetchData = () => {
+  useEffect(() => {
     if (data.length === 0) {
       setState({ loaded: false });
       getFilms()
@@ -24,24 +23,11 @@ export default () => {
           setState({ loaded: true });
         });
     }
-  };
-
-  const renderFilms = (data) => data.map((item) => <Film key={`film-${item.release_date}`} {...item} />);
-
-  useEffect(() => {
-    fetchData();
   }, []); //eslint-disable-line
 
   return (
     <main>
-      <ul className="movies">
-        {loaded && renderFilms(data)}
-        {!loaded && (
-          <li>
-            <Loader />
-          </li>
-        )}
-      </ul>
+      <FilmList />
     </main>
   );
 };

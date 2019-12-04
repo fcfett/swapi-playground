@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
-import Helpers from '../../utils/helpers';
+import { getLocalStorageObject, setLocalStorageObject } from '../../utils/helpers';
 
 const LOCAL_STORAGE_ID = 'swapi-data';
 const INITIAL_STATE = {
@@ -9,11 +9,11 @@ const INITIAL_STATE = {
 };
 
 const getLocalStorageState = () => {
-  const lsState = Helpers.getLocalStorageObject(LOCAL_STORAGE_ID);
+  const lsState = getLocalStorageObject(LOCAL_STORAGE_ID);
   return !lsState ? INITIAL_STATE : lsState;
 };
 
-const setLocalStorageState = (state) => Helpers.setLocalStorageObject(LOCAL_STORAGE_ID, state);
+const setLocalStorageState = (state) => setLocalStorageObject(LOCAL_STORAGE_ID, state);
 
 export const FilmsContext = createContext();
 export const FilmsProvider = ({ children }) => {
