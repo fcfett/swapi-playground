@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/swapi-playground/static/css/main.c66db85d.chunk.css",
+    "main.js": "/swapi-playground/static/js/main.1ef8ca00.chunk.js",
+    "main.js.map": "/swapi-playground/static/js/main.1ef8ca00.chunk.js.map",
+    "runtime-main.js": "/swapi-playground/static/js/runtime-main.b982d893.js",
+    "runtime-main.js.map": "/swapi-playground/static/js/runtime-main.b982d893.js.map",
+    "static/js/2.1f157424.chunk.js": "/swapi-playground/static/js/2.1f157424.chunk.js",
+    "static/js/2.1f157424.chunk.js.map": "/swapi-playground/static/js/2.1f157424.chunk.js.map",
+    "index.html": "/swapi-playground/index.html",
+    "precache-manifest.4284c85ee2d88cfb5b0c196b809dc5f8.js": "/swapi-playground/precache-manifest.4284c85ee2d88cfb5b0c196b809dc5f8.js",
+    "service-worker.js": "/swapi-playground/service-worker.js",
+    "static/css/main.c66db85d.chunk.css.map": "/swapi-playground/static/css/main.c66db85d.chunk.css.map",
+    "static/media/1977-05-25.jpeg": "/swapi-playground/static/media/1977-05-25.1d8abd57.jpeg",
+    "static/media/1980-05-17.jpeg": "/swapi-playground/static/media/1980-05-17.b44fc018.jpeg",
+    "static/media/1983-05-25.jpeg": "/swapi-playground/static/media/1983-05-25.a87381ba.jpeg",
+    "static/media/1999-05-19.jpeg": "/swapi-playground/static/media/1999-05-19.5fa9e2b6.jpeg",
+    "static/media/2002-05-16.jpeg": "/swapi-playground/static/media/2002-05-16.e8cd32c7.jpeg",
+    "static/media/2005-05-19.jpeg": "/swapi-playground/static/media/2005-05-19.96da60b6.jpeg",
+    "static/media/2015-12-11.jpeg": "/swapi-playground/static/media/2015-12-11.a31a9bcf.jpeg",
+    "static/media/2017-12-14.jpeg": "/swapi-playground/static/media/2017-12-14.153b3c9b.jpeg",
+    "static/media/angle-down.56c8ef7f.svg": "/swapi-playground/static/media/angle-down.56c8ef7f.svg",
+    "static/media/global.scss": "/swapi-playground/static/media/brushstrike.776608fc.ttf",
+    "static/media/logo-fill.125a8bb4.svg": "/swapi-playground/static/media/logo-fill.125a8bb4.svg",
+    "static/media/plus.a1148ea0.svg": "/swapi-playground/static/media/plus.a1148ea0.svg",
+    "static/media/reload.212839c0.svg": "/swapi-playground/static/media/reload.212839c0.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b982d893.js",
+    "static/js/2.1f157424.chunk.js",
+    "static/css/main.c66db85d.chunk.css",
+    "static/js/main.1ef8ca00.chunk.js"
+  ]
+}
