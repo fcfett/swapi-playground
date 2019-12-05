@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import Loader from '../../atoms/Loader';
 import Toggle from '../../atoms/Toggle';
-import Film from '../../molecules/Film';
+import Film from '../Film';
 import { FilmsContext } from '../../../store/Films';
 import { sortByKey } from '../../../utils/helpers';
 
@@ -13,7 +13,10 @@ export default () => {
 
   const toggleSort = () => {
     const key = sortBy === sortKeys[0] ? sortKeys[1] : sortKeys[0];
-    setState({ sortBy: key, data: sortByKey(data, key) });
+    setState({ sortBy: key, data: [] });
+    setTimeout(() => {
+      setState({ data: sortByKey(data, key) });
+    });
   };
 
   const renderLoader = () =>

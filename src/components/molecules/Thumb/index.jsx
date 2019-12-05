@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 const images = {
   '1977-05-25': require('../../../assets/images/1977-05-25.jpeg'),
@@ -11,13 +11,16 @@ const images = {
   '2017-12-14': require('../../../assets/images/2017-12-14.jpeg')
 };
 
-export default ({ date, alt, ...rest }) => {
+const Thumb = ({ date, alt, ...rest }, ref) => {
   const image = images[date] || false;
+  const bindRef = ref ? { ref } : null;
   return (
     image && (
-      <figure {...rest}>
+      <figure {...rest} {...bindRef}>
         <img src={image} alt={alt} />
       </figure>
     )
   );
 };
+
+export default forwardRef(Thumb);

@@ -7,9 +7,18 @@ import { getRomanNumber } from '../../../utils/helpers';
 
 export default (props) => {
   const [isActive, setActive] = useState(false);
+  const [isVisited, setVisited] = useState(false);
   const [scrolling, setScrolling] = useState();
 
-  const toggleActive = (toggle) => setActive(toggle ? toggle : !isActive);
+  const toggleActive = (toggle) => {
+    if (toggle) setVisited(true);
+    setActive(toggle ? toggle : !isActive);
+  };
+
+  const thumbRef = useRef();
+  const delegateFocus = () => {
+    thumbRef.current && thumbRef.current.click();
+  };
 
   const introRef = useRef();
   useEffect(() => {
@@ -45,8 +54,9 @@ export default (props) => {
     ));
 
   return (
-    <li className={`card ${isActive ? 'active' : ''}`}>
-      <Thumb date={release_date} alt={title} onClick={() => toggleActive(true)} />
+    <li className={`card ${isActive ? 'active' : ''} ${isVisited ? 'visited' : ''}`}>
+      <button className="focusable" title={title} onClickCapture={() => delegateFocus()}></button>
+      <Thumb date={release_date} alt={title} ref={thumbRef} onClick={() => toggleActive(true)} />
       <section className="content">
         <button className="btn-close" onClick={() => toggleActive(false)}>
           <Icon name="close" height={32} width={32} />

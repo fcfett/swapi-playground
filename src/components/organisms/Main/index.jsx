@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 
-import FilmList from '../../molecules/FilmList';
+import FilmsList from '../../molecules/FilmsList';
 import { FilmsContext } from '../../../store/Films';
 import { getFilms } from '../../../services/swapi';
 import { sortByKey } from '../../../utils/helpers';
@@ -27,7 +27,7 @@ export default () => {
 
   return (
     <main>
-      <FilmList />
+      <FilmsList />
     </main>
   );
 };
