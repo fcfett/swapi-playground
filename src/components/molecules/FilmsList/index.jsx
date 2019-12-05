@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import './style.scss';
 
 import Loader from '../../atoms/Loader';
 import Toggle from '../../atoms/Toggle';
@@ -39,7 +40,8 @@ export default () => {
         />
       </li>
     );
-  const renderFilms = (data) => loaded && data.map((item) => <Film key={`film-${item.release_date}`} {...item} />);
+
+  const renderFilms = (data) => loaded && data.map((item) => <Film key={`film-${item.release_date}`} data={item} />);
 
   return (
     <ul className="movies">

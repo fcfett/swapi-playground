@@ -7,8 +7,11 @@
   flex: 1 0 100%;
 
   &:focus-within {
-    .toggle:before {
-      filter: drop-shadow(1px 2px 2px var(--black));
+    input:checked ~ .toggle {
+      box-shadow: 0 0 4px var(--red);
+    }
+    input:not(:checked) ~ .toggle {
+      box-shadow: 0 0 4px var(--green);
     }
   }
 

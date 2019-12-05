@@ -20,7 +20,20 @@
 
 a {
   color: inherit;
-  text-decoration: inherit;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  &.sith:after {
+    background: var(--white);
+    bottom: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 4px 1px var(--red);
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 1px 0 0;
+    width: 100%;
+  }
 }
 
 body {
@@ -145,173 +158,6 @@ symbol svg {
   fill: var(--white);
 }
 
-ul.movies {
-  display: flex;
-  flex-flow: row wrap;
-  height: 100%;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    &.full {
-      flex: 1 0 100%;
-      height: min-content;
-    }
-    &:not(.full):not(.active):not(.visited) {
-      animation: fadein 0.25s forwards;
-      opacity: 0;
-      transform: scale(0);
-
-      &:nth-of-type(2) {
-        animation-delay: 0.05s;
-      }
-      &:nth-of-type(3) {
-        animation-delay: 0.1s;
-      }
-      &:nth-of-type(4) {
-        animation-delay: 0.15s;
-      }
-      &:nth-of-type(5) {
-        animation-delay: 0.2s;
-      }
-      &:nth-of-type(6) {
-        animation-delay: 0.25s;
-      }
-      &:nth-of-type(7) {
-        animation-delay: 0.3s;
-      }
-
-      &:nth-of-type(8) {
-        animation-delay: 0.35s;
-      }
-
-      &:nth-of-type(9) {
-        animation-delay: 0.4s;
-      }
-
-      @keyframes fadein {
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-    }
-
-    button.focusable {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      padding: 0;
-      border: none;
-      background: none;
-      outline: none;
-    }
-  }
-}
-
-.card {
-  border-radius: 16px;
-  height: 200px;
-  margin: 10px;
-  overflow: visible;
-  position: relative;
-  width: 140px;
-  transition-property: box-shadow;
-
-  &,
-  img,
-  .content,
-  &:before,
-  &:after {
-    border-radius: 16px;
-    transition: 0.35s ease-out;
-  }
-
-  figure,
-  img,
-  .content,
-  &:before,
-  &:after {
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-
-  img {
-    object-fit: cover;
-  }
-
-  figure {
-    margin: 0;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-  }
-
-  .content {
-    opacity: 0;
-    position: fixed;
-    transform: scale(0);
-    * {
-      visibility: hidden;
-    }
-  }
-
-  &:before {
-    transform: scale(0.6);
-    filter: blur(16px);
-    transition-property: filter, transform, opacity;
-    background-image: var(--force-gradient);
-    z-index: -1;
-  }
-
-  &:after {
-    box-sizing: border-box;
-    transition-property: border, box-shadow;
-  }
-
-  &:hover,
-  &:focus,
-  &:focus-within {
-    box-shadow: 0 25px 30px -10px #000;
-    &:before {
-      transform: scale(1.1, 1.05);
-      animation: pulse 3s infinite;
-    }
-    &:after {
-      box-shadow: 0 0 1px 2px var(--white);
-    }
-  }
-
-  &.active .content {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: auto;
-    height: auto;
-    margin: 0;
-    z-index: 9;
-    background: var(--black);
-    border-radius: 0;
-    opacity: 0.9;
-    transform: scale(1);
-    color: var(--yellow);
-    overflow: hidden;
-    padding: 110px 10px 40px;
-
-    * {
-      visibility: visible;
-    }
-  }
-}
-
 .btn {
   &,
   &-close,
@@ -328,20 +174,4 @@ ul.movies {
     right: 0;
     margin: 20px 10px;
   }
-}
-
-@keyframes pulse {
-  0%,
-  50%,
-  100% {
-    opacity: 0.6;
-  }
-  25%,
-  75% {
-    opacity: 1;
-  }
-}
-
-.pulse {
-  animation: pulse 3s infinite;
 }
