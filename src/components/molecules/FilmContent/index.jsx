@@ -3,7 +3,7 @@ import './style.scss';
 
 import Icon from '../../atoms/Icon';
 import useKeyPress from '../../../hooks/useKeyPress';
-import { getRomanNumber } from '../../../utils/helpers';
+import { getRomanNumber, getFormattedDateString, toRegularNoun } from '../../../utils/helpers';
 
 export default ({ data, isVisible, onClose }) => {
   const [scrolling, setScrolling] = useState();
@@ -39,12 +39,15 @@ export default ({ data, isVisible, onClose }) => {
   const { characters, planets, starships, vehicles, species } = rest;
 
   const renderQuantifiers = () =>
-    Object.entries({ characters, planets, starships, vehicles, species }).map(([key, arrValues]) => (
-      <li key={`${release_date}-${key}`}>
-        <h2>{arrValues.length}</h2>
-        <span>{key}</span>
-      </li>
-    ));
+    Object.entries({ characters, planets, starships, vehicles, species }).map(([key, arrValues]) => {
+      const count = arrValues.length;
+      return (
+        <li key={`${release_date}-${key}`}>
+          <h2>{count}</h2>
+          <span>{toRegularNoun(key, count)}</span>
+        </li>
+      );
+    });
 
   return (
     <section className="content">
@@ -66,7 +69,7 @@ export default ({ data, isVisible, onClose }) => {
       <article className="info">
         <h2>Episode {getRomanNumber(episode_id)}</h2>
         <h1>{title}</h1>
-        <p>{release_date}</p>
+        <p>{getFormattedDateString(release_date)}</p>
         <p>Directed by {director}</p>
         <p>Produced by {producer}</p>
         <ul>{renderQuantifiers()}</ul>

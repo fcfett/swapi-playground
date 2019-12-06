@@ -25,6 +25,13 @@ export const getRomanNumber = (number) => {
   return roman;
 };
 
+export const toRegularNoun = (key, count) => (count === 1 ? key.slice(0, -1) : key);
+
+export const getFormattedDateString = (strDate) => {
+  const rgxDate = /(\d{4})[-/](\d{2})[-/](\d{2})/;
+  return strDate.toString().replace(rgxDate, '$2/$3/$1');
+};
+
 export const getLocalStorageObject = (lsId, arrProps = []) => {
   const lsItem = localStorage.get(lsId);
 
@@ -60,7 +67,9 @@ export default {
   isGreaterThan,
   getRomanNumber,
   areEqualObjects,
+  toRegularNoun,
   getEmptyPlaceholder,
   getLocalStorageObject,
-  setLocalStorageObject
+  setLocalStorageObject,
+  getFormattedDateString
 };
