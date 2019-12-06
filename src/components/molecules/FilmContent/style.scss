@@ -3,6 +3,7 @@
   display: flex;
   flex-flow: row wrap;
   overflow: hidden;
+  text-shadow: 2px 2px 1px var(--black);
 
   .intro,
   .info {
@@ -14,43 +15,33 @@
   }
 
   .intro {
+    transform: perspective(300px) rotateX(20deg) translateY(-20px) !important;
     z-index: 1;
 
     .crawler {
       overflow: hidden;
       padding: 10px;
       position: relative;
-      transform: perspective(300px) rotateX(20deg) translateY(-20px);
     }
 
     .text {
-      margin: 80% 15%;
+      margin: 80vh 15%;
       /* text-align: justify; */ // should be, but looks awful! 🤫
       font-size: 3rem;
       z-index: 1;
     }
 
-    &:before,
-    &:after {
+    &:before {
+      background-image: linear-gradient(to bottom, var(--black), transparent);
       content: '';
-      height: 40px;
+      height: 80px;
       left: 0;
       position: absolute;
       width: 100%;
       display: block;
       right: 0;
-      z-index: 2;
-    }
-
-    &:before {
       top: 0;
-      background-image: linear-gradient(to bottom, var(--black), transparent);
-      transform: perspective(300px) rotateX(20deg) translateY(53px);
-    }
-    &:after {
-      bottom: 0;
-      background-image: linear-gradient(to top, var(--black), transparent);
-      transform: perspective(300px) rotateX(20deg) translateY(40px);
+      z-index: 2;
     }
 
     .btn-replay {
