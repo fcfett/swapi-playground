@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project uses [SWAPI](https://swapi.co/) data and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Live Demo
+
+You can see the live demo [here](https://fcfett.github.io/swapi-playground/)
 
 ## Available Scripts
 
