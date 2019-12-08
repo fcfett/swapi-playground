@@ -7,13 +7,6 @@ ul.movies {
   margin: 0;
   padding: 0;
 
-  @keyframes fadein {
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-
   & > li {
     &.full {
       flex: 1 0 100%;
@@ -24,37 +17,19 @@ ul.movies {
       display: flex;
       opacity: 0;
       transform: scale(0);
+      $delay: 0.05s;
 
-      &:nth-of-type(2) {
-        animation-delay: 0.05s;
+      @keyframes fadein {
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
       }
 
-      &:nth-of-type(3) {
-        animation-delay: 0.1s;
-      }
-
-      &:nth-of-type(4) {
-        animation-delay: 0.15s;
-      }
-
-      &:nth-of-type(5) {
-        animation-delay: 0.2s;
-      }
-
-      &:nth-of-type(6) {
-        animation-delay: 0.25s;
-      }
-
-      &:nth-of-type(7) {
-        animation-delay: 0.3s;
-      }
-
-      &:nth-of-type(8) {
-        animation-delay: 0.35s;
-      }
-
-      &:nth-of-type(9) {
-        animation-delay: 0.4s;
+      @for $i from 2 to 9 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: #{$delay * $i};
+        }
       }
     }
   }

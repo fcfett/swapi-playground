@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { ReactComponent as Logo } from '../../../assets/icons/logo-fill.svg';
+import { ReactComponent as Logo } from '../../../assets/icons/logo.svg';
 import { ReactComponent as Plus } from '../../../assets/icons/plus.svg';
 import { ReactComponent as AngleDown } from '../../../assets/icons/angle-down.svg';
 import { ReactComponent as Reload } from '../../../assets/icons/reload.svg';
 
 export default (props) => (
   <svg id="svg-defs">
-    <symbol id="svg-icon-logo-fill">
+    <symbol id="svg-icon-logo">
       <Logo />
     </symbol>
 
