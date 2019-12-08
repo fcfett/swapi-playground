@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "299b249f2deb1165af93a528967025b1",
+    "revision": "6a1f60baa8f8f4fa13d66c8929498b4f",
     "url": "/swapi-playground/index.html"
   },
   {
-    "revision": "2224e7f4e05b2e98e534",
-    "url": "/swapi-playground/static/css/main.0c67b1b8.chunk.css"
+    "revision": "40eca318bf43221d2812",
+    "url": "/swapi-playground/static/css/main.a610b3a0.chunk.css"
   },
   {
     "revision": "703763532abe24fb8290",
     "url": "/swapi-playground/static/js/2.1f157424.chunk.js"
   },
   {
-    "revision": "2224e7f4e05b2e98e534",
-    "url": "/swapi-playground/static/js/main.06d0bd38.chunk.js"
+    "revision": "40eca318bf43221d2812",
+    "url": "/swapi-playground/static/js/main.c1a0661f.chunk.js"
   },
   {
     "revision": "86054da5a8d82428f6ec",
@@ -65,7 +65,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "125a8bb452d2427ffc6ce229777ffdda",
-    "url": "/swapi-playground/static/media/logo-fill.125a8bb4.svg"
+    "url": "/swapi-playground/static/media/logo.125a8bb4.svg"
   },
   {
     "revision": "a1148ea0ec5e18cecfb9ac8aa6944d06",
