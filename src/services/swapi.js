@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://swapi.co/api'
+  baseURL: 'https://swapi.dev/api'
 });
 
 export const getFilms = async (userId) => {
