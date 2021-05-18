@@ -13,7 +13,6 @@ const images = {
 
 const Thumb = ({ date, alt, ...rest }, ref) => {
   const image = images[date] || false;
-  console.log(image);
   const bindRef = ref ? { ref } : null;
   return (
     image && (
