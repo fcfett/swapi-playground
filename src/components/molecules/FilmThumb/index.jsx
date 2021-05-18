@@ -8,16 +8,17 @@ const images = {
   '2002-05-16': require('../../../assets/images/2002-05-16.jpeg'),
   '2005-05-19': require('../../../assets/images/2005-05-19.jpeg'),
   '2015-12-11': require('../../../assets/images/2015-12-11.jpeg'),
-  '2017-12-14': require('../../../assets/images/2017-12-14.jpeg')
+  '2017-12-14': require('../../../assets/images/2017-12-14.jpeg'),
 };
 
 const Thumb = ({ date, alt, ...rest }, ref) => {
   const image = images[date] || false;
+  console.log(image);
   const bindRef = ref ? { ref } : null;
   return (
     image && (
       <figure {...rest} {...bindRef}>
-        <img src={image} alt={alt} />
+        <img src={image.default} alt={alt} />
       </figure>
     )
   );

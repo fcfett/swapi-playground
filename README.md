@@ -2,7 +2,7 @@ This project uses [SWAPI](https://swapi.co/) data and was bootstrapped with [Cre
 
 ## Live Demo
 
-You can see the live demo [here](https://fcfett.github.io/swapi-playground/)
+You can see the live demo [here](https://fcfett.github.io/swapi-playground/).
 
 ## Available Scripts
 

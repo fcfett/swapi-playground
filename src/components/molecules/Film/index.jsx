@@ -16,6 +16,8 @@ export default ({ data }) => {
     setActive(toggle ? toggle : !isActive);
   };
 
+  console.log(title, release_date, data);
+
   return (
     <li className={`card ${isActive ? 'active' : ''} ${isVisited ? 'visited' : ''}`}>
       <FocusHandler text={title} targetRef={thumbRef} />
