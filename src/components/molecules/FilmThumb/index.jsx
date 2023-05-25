@@ -17,7 +17,7 @@ const Thumb = ({ date, alt, ...rest }, ref) => {
   return (
     image && (
       <figure {...rest} {...bindRef}>
-        <img src={image.default} alt={alt} />
+        <img src={image} alt={alt} />
       </figure>
     )
   );
