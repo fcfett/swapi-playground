@@ -1,33 +1,27 @@
 {
   "files": {
-    "main.css": "/swapi-playground/static/css/main.0ccc2f9e.chunk.css",
-    "main.js": "/swapi-playground/static/js/main.576f18e3.chunk.js",
-    "main.js.map": "/swapi-playground/static/js/main.576f18e3.chunk.js.map",
-    "runtime-main.js": "/swapi-playground/static/js/runtime-main.da091d31.js",
-    "runtime-main.js.map": "/swapi-playground/static/js/runtime-main.da091d31.js.map",
-    "static/js/2.a3dfbc76.chunk.js": "/swapi-playground/static/js/2.a3dfbc76.chunk.js",
-    "static/js/2.a3dfbc76.chunk.js.map": "/swapi-playground/static/js/2.a3dfbc76.chunk.js.map",
+    "main.css": "/swapi-playground/static/css/main.ac6a4462.css",
+    "main.js": "/swapi-playground/static/js/main.ba00d413.js",
+    "static/media/brushstrike.ttf": "/swapi-playground/static/media/brushstrike.e2f555516752aa58f326.ttf",
+    "static/media/background.jpg": "/swapi-playground/static/media/background.2492efa638a1ddb447dd.jpg",
+    "static/media/2005-05-19.jpeg": "/swapi-playground/static/media/2005-05-19.6a2f32ccd2914737fb02.jpeg",
+    "static/media/2017-12-14.jpeg": "/swapi-playground/static/media/2017-12-14.b73f2ded3cd7dd9a3638.jpeg",
+    "static/media/2002-05-16.jpeg": "/swapi-playground/static/media/2002-05-16.255075312c56d3ebf925.jpeg",
+    "static/media/1999-05-19.jpeg": "/swapi-playground/static/media/1999-05-19.4e1cdb86e02b9708af87.jpeg",
+    "static/media/1980-05-17.jpeg": "/swapi-playground/static/media/1980-05-17.3f005d7f9e3043ce44bb.jpeg",
+    "static/media/1983-05-25.jpeg": "/swapi-playground/static/media/1983-05-25.3612da7c55ab554813a6.jpeg",
+    "static/media/1977-05-25.jpeg": "/swapi-playground/static/media/1977-05-25.5c647033d2a9f835235a.jpeg",
+    "static/media/2015-12-11.jpeg": "/swapi-playground/static/media/2015-12-11.ee42ebb91bfc2e707422.jpeg",
+    "static/media/logo.svg": "/swapi-playground/static/media/logo.7751c70a54837dcb56a944b41a6e32c4.svg",
     "index.html": "/swapi-playground/index.html",
-    "static/css/main.0ccc2f9e.chunk.css.map": "/swapi-playground/static/css/main.0ccc2f9e.chunk.css.map",
-    "static/js/2.a3dfbc76.chunk.js.LICENSE.txt": "/swapi-playground/static/js/2.a3dfbc76.chunk.js.LICENSE.txt",
-    "static/media/1977-05-25.jpeg": "/swapi-playground/static/media/1977-05-25.5c647033.jpeg",
-    "static/media/1980-05-17.jpeg": "/swapi-playground/static/media/1980-05-17.3f005d7f.jpeg",
-    "static/media/1983-05-25.jpeg": "/swapi-playground/static/media/1983-05-25.3612da7c.jpeg",
-    "static/media/1999-05-19.jpeg": "/swapi-playground/static/media/1999-05-19.4e1cdb86.jpeg",
-    "static/media/2002-05-16.jpeg": "/swapi-playground/static/media/2002-05-16.25507531.jpeg",
-    "static/media/2005-05-19.jpeg": "/swapi-playground/static/media/2005-05-19.6a2f32cc.jpeg",
-    "static/media/2015-12-11.jpeg": "/swapi-playground/static/media/2015-12-11.ee42ebb9.jpeg",
-    "static/media/2017-12-14.jpeg": "/swapi-playground/static/media/2017-12-14.b73f2ded.jpeg",
-    "static/media/angle-down.7aa05c6f.svg": "/swapi-playground/static/media/angle-down.7aa05c6f.svg",
-    "static/media/global.scss": "/swapi-playground/static/media/brushstrike.e2f55551.ttf",
-    "static/media/logo.7751c70a.svg": "/swapi-playground/static/media/logo.7751c70a.svg",
-    "static/media/plus.756438ea.svg": "/swapi-playground/static/media/plus.756438ea.svg",
-    "static/media/reload.6983a030.svg": "/swapi-playground/static/media/reload.6983a030.svg"
+    "static/media/reload.svg": "/swapi-playground/static/media/reload.6983a030c355d957ae76dc968fad1ff9.svg",
+    "static/media/plus.svg": "/swapi-playground/static/media/plus.756438eafadcf676a4929899332537b7.svg",
+    "static/media/angle-down.svg": "/swapi-playground/static/media/angle-down.7aa05c6f9cc33f75ad2d8ee15c6828f1.svg",
+    "main.ac6a4462.css.map": "/swapi-playground/static/css/main.ac6a4462.css.map",
+    "main.ba00d413.js.map": "/swapi-playground/static/js/main.ba00d413.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.da091d31.js",
-    "static/js/2.a3dfbc76.chunk.js",
-    "static/css/main.0ccc2f9e.chunk.css",
-    "static/js/main.576f18e3.chunk.js"
+    "static/css/main.ac6a4462.css",
+    "static/js/main.ba00d413.js"
   ]
 }
