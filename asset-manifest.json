@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/swapi-playground/static/css/main.ac6a4462.css",
-    "main.js": "/swapi-playground/static/js/main.ba00d413.js",
+    "main.js": "/swapi-playground/static/js/main.f088b448.js",
     "static/media/brushstrike.ttf": "/swapi-playground/static/media/brushstrike.e2f555516752aa58f326.ttf",
     "static/media/background.jpg": "/swapi-playground/static/media/background.2492efa638a1ddb447dd.jpg",
     "static/media/2005-05-19.jpeg": "/swapi-playground/static/media/2005-05-19.6a2f32ccd2914737fb02.jpeg",
@@ -18,10 +18,10 @@
     "static/media/plus.svg": "/swapi-playground/static/media/plus.756438eafadcf676a4929899332537b7.svg",
     "static/media/angle-down.svg": "/swapi-playground/static/media/angle-down.7aa05c6f9cc33f75ad2d8ee15c6828f1.svg",
     "main.ac6a4462.css.map": "/swapi-playground/static/css/main.ac6a4462.css.map",
-    "main.ba00d413.js.map": "/swapi-playground/static/js/main.ba00d413.js.map"
+    "main.f088b448.js.map": "/swapi-playground/static/js/main.f088b448.js.map"
   },
   "entrypoints": [
     "static/css/main.ac6a4462.css",
-    "static/js/main.ba00d413.js"
+    "static/js/main.f088b448.js"
   ]
 }
